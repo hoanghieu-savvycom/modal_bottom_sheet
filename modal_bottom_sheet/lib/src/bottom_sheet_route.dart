@@ -77,7 +77,7 @@ class _ModalBottomSheetState<T> extends State<_ModalBottomSheet<T>> {
     assert(widget.route._animationController != null);
     final scrollController = PrimaryScrollController.of(context);
     return ModalScrollController(
-      controller: scrollController,
+      controller: scrollController!,
       child: Builder(
         builder: (context) => AnimatedBuilder(
           animation: widget.route._animationController!,
@@ -109,7 +109,7 @@ class _ModalBottomSheetState<T> extends State<_ModalBottomSheet<T>> {
                 child: child!,
                 enableDrag: widget.enableDrag,
                 bounce: widget.bounce,
-                scrollController: scrollController,
+                scrollController: scrollController!,
                 animationCurve: widget.animationCurve,
               ),
             );
